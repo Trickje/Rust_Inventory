@@ -2,4 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Rust_Inventory/obj/Debug
+/Rust_Inventory/obj
+/Rust_Inventory/bin
+

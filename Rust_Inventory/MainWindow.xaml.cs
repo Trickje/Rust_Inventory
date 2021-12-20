@@ -33,79 +33,43 @@ namespace Rust_Inventory
         }
         private void OnClick0(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 0);
-            }
-            m_ViewModel.UpdateCurrentSelection(0);
+            m_ViewModel.OnClick0();
         }
         private void OnClick1(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 1);
-            }
-            m_ViewModel.UpdateCurrentSelection(1);
+            m_ViewModel.OnClick1();
         }
         private void OnClick2(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 2);
-            }
-            m_ViewModel.UpdateCurrentSelection(2);
+            m_ViewModel.OnClick2();
         }
         private void OnClick3(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 3);
-            }
-            m_ViewModel.UpdateCurrentSelection(3);
+            m_ViewModel.OnClick3();
         }
         private void OnClick4(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 4);
-            }
-            m_ViewModel.UpdateCurrentSelection(4);
+            m_ViewModel.OnClick4();
         }
         private void OnClick5(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 5);
-            }
-            m_ViewModel.UpdateCurrentSelection(5);
+            m_ViewModel.OnClick5();
         }
         private void OnClick6(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 6);
-            }
-            m_ViewModel.UpdateCurrentSelection(6);
+            m_ViewModel.OnClick6();
         }
         private void OnClick7(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 7);
-            }
-            m_ViewModel.UpdateCurrentSelection(7);
+            m_ViewModel.OnClick7();
         }
         private void OnClick8(object sender, RoutedEventArgs e)
         {
-            if (m_ViewModel.Switching)
-            {
-                m_ViewModel.SwapItems(m_ViewModel.SelectedInventorySlot, 8);
-            }
-            m_ViewModel.UpdateCurrentSelection(8);
+            m_ViewModel.OnClick8();
         }
         private void OnSwitchStart(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.Switching = !m_ViewModel.Switching;
+            m_ViewModel.OnSwitchStart();
         }
     }
 }

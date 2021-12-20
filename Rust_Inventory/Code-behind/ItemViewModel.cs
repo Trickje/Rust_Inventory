@@ -184,5 +184,81 @@ namespace Rust_Inventory.Code_behind
             }
         }
         #endregion
+        public void OnClick0()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 0);
+            }
+            UpdateCurrentSelection(0);
+        }
+        public void OnClick1()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 1);
+            }
+            UpdateCurrentSelection(1);
+        }
+        public void OnClick2()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 2);
+            }
+            UpdateCurrentSelection(2);
+        }
+        public void OnClick3()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 3);
+            }
+            UpdateCurrentSelection(3);
+        }
+        public void OnClick4()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 4);
+            }
+            UpdateCurrentSelection(4);
+        }
+        public void OnClick5()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 5);
+            }
+            UpdateCurrentSelection(5);
+        }
+        public void OnClick6()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 6);
+            }
+            UpdateCurrentSelection(6);
+        }
+        public void OnClick7()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 7);
+            }
+            UpdateCurrentSelection(7);
+        }
+        public void OnClick8()
+        {
+            if (Switching)
+            {
+                SwapItems(SelectedInventorySlot, 8);
+            }
+            UpdateCurrentSelection(8);
+        }
+        public void OnSwitchStart()
+        {
+            Switching = !Switching;
+        }
     }
 }

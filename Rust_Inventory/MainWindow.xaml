@@ -26,32 +26,32 @@
             <RowDefinition />
         </Grid.RowDefinitions>
             <Button Grid.Column="0" Grid.Row="0" Click="OnClick0">
-                <Image  Source="{Binding Items[0].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[0].ItemSprite, UpdateSourceTrigger=PropertyChanged}"  Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
 
             <Button Grid.Column="1" Grid.Row="0" Click="OnClick1">
-                <Image Grid.Column="1" Grid.Row="0"  Source="{Binding Items[1].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image Grid.Column="1" Grid.Row="0"  Source="{Binding Items[1].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="2" Grid.Row="0" Click="OnClick2">
-                <Image  Source="{Binding Items[2].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[2].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="0" Grid.Row="1" Click="OnClick3">
-                <Image  Source="{Binding Items[3].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[3].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="1" Grid.Row="1" Click="OnClick4">
-                <Image  Source="{Binding Items[4].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[4].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="2" Grid.Row="1" Click="OnClick5">
-                    <Image  Source="{Binding Items[5].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[5].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="0" Grid.Row="2" Click="OnClick6">
-                    <Image  Source="{Binding Items[6].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[6].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="1" Grid.Row="2" Click="OnClick7">
-                    <Image  Source="{Binding Items[7].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[7].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
             <Button Grid.Column="2" Grid.Row="2" Click="OnClick8">
-                    <Image  Source="{Binding Items[8].ItemSprite}" Stretch="Fill" Width="200" Height="200"></Image>
+                <Image  Source="{Binding Items[8].ItemSprite, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" Width="200" Height="200"></Image>
             </Button>
         </Grid>
     <Grid
@@ -76,28 +76,28 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0"  Text="ID"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemID}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemID, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0"  Text="Name"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemName}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemName, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0"  Text="Amount"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemCount}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemCount, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="3" Grid.Column="0"  Text="Damage"/>
-            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemDamage}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemDamage, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="4" Grid.Column="0"  Text="Sprite file"/>
-            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemSprite}"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemSprite, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="5" Grid.Column="0"  Text="Range of Effect"/>
-            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemRangeOfEffect}"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemRangeOfEffect, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Row="6" Grid.Column="0"  Text="Durability"/>
-            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemDurability}"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding CurrentSelectedItem.ItemDurability, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Button Grid.Row="7" Grid.Column="0" Background="LightSlateGray" Click="OnSwitchStart"> Swap</Button>
-            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding SwitchString}"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding SwitchString, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </DockPanel>
 </Window>
