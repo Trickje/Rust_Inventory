@@ -17,6 +17,10 @@ namespace Rust_Inventory.Code_behind
         public string m_ItemSprite;
         public float m_ItemRangeOfEffect;
         public float m_ItemDurability;
+
+        //These are not exposed to the ItemViewModel
+        public int m_SomeNonExposedVariable = 69;
+        public string m_NotExposedToTheView = "This is never on the view";
         #endregion
 
 

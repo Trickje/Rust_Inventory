@@ -23,14 +23,16 @@ namespace Rust_Inventory
     public partial class MainWindow : Window
     {
         private InventoryViewModel m_InventoryViewModel;
-
+        private Inventory m_Inventory;
         public MainWindow()
         {
             InitializeComponent();
-            m_InventoryViewModel = new InventoryViewModel();
+            m_Inventory = new Inventory();
+            m_InventoryViewModel = new InventoryViewModel(m_Inventory);
             this.DataContext = m_InventoryViewModel;
             this.Show();
         }
+        //Rerouting the click events to the inventory view model
         private void OnClick0(object sender, RoutedEventArgs e)
         {
             m_InventoryViewModel.OnClick0();

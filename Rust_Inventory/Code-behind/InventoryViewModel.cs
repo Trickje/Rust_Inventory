@@ -33,18 +33,14 @@ namespace Rust_Inventory.Code_behind
             }
             OnPropertyChanged("Items");
         }
-        public InventoryViewModel()
+        public InventoryViewModel(Inventory a_Target)
         {
-            m_Inventory = new Inventory();
+            m_Inventory = a_Target;
             SelectedInventorySlot = 0;
             Switching = false;
             SwitchString = "Not Swapping";
             m_Items = new List<ItemViewModel>();
-            foreach (Item item in m_Inventory.m_ItemList)
-            {
-                m_Items.Add(new ItemViewModel(item));
-            }
-            OnPropertyChanged("Items");
+            RefreshItemVMs();
             m_CurrentSelectedItem = m_Items[SelectedInventorySlot];
            
         }

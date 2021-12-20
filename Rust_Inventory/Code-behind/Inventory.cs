@@ -9,6 +9,8 @@ namespace Rust_Inventory.Code_behind
     class Inventory
     {
         public IList<Item> m_ItemList;
+        
+        //Inventory functionality that is called by the Inventory View Model
         public bool SwapItems(int index1, int index2)
         {
             if(index1 == index2)
