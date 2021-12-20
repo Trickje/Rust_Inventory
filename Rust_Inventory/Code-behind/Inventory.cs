@@ -8,8 +8,7 @@ namespace Rust_Inventory.Code_behind
 {
     class Inventory
     {
-        private IList<Item> m_ItemList;
-        public IList<ItemViewModel> ItemsVM;
+        public IList<Item> m_ItemList;
         public bool SwapItems(int index1, int index2)
         {
             if(index1 == index2)
@@ -19,15 +18,11 @@ namespace Rust_Inventory.Code_behind
             Item temp = m_ItemList[index1];
             m_ItemList[index1] = m_ItemList[index2];
             m_ItemList[index2] = temp;
-            ItemViewModel tempVM = ItemsVM[index1];
-            ItemsVM[index1] = ItemsVM[index2];
-            ItemsVM[index2] = tempVM;
             return true;
         }
 
         public Inventory()
         {
-            ItemsVM = new List<ItemViewModel>();
             m_ItemList = new List<Item>
             {
                 new Item{
@@ -112,10 +107,6 @@ namespace Rust_Inventory.Code_behind
                     m_ItemDurability=0.0f
                 }
             };
-            foreach(Item item in m_ItemList)
-            {
-                ItemsVM.Add(new ItemViewModel(item));
-            }
         }
     }
 }

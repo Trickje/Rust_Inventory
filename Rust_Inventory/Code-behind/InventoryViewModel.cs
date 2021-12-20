@@ -12,15 +12,26 @@ namespace Rust_Inventory.Code_behind
         private Inventory m_Inventory;
         public int SelectedInventorySlot;
         private bool m_Switching;
-        public IList<ItemViewModel> Items {
+        private IList<ItemViewModel> m_Items;
+        public IList<ItemViewModel> Items
+        {
             get
             {
-               return m_Inventory.ItemsVM;
+                return m_Items;
             }
             private set
             {
 
             }
+        }
+        void RefreshItemVMs()
+        {
+            m_Items.Clear();
+            foreach (Item item in m_Inventory.m_ItemList)
+            {
+                m_Items.Add(new ItemViewModel(item));
+            }
+            OnPropertyChanged("Items");
         }
         public InventoryViewModel()
         {
@@ -28,9 +39,14 @@ namespace Rust_Inventory.Code_behind
             SelectedInventorySlot = 0;
             Switching = false;
             SwitchString = "Not Swapping";
-
-
-            m_CurrentSelectedItem = m_Inventory.ItemsVM[SelectedInventorySlot];
+            m_Items = new List<ItemViewModel>();
+            foreach (Item item in m_Inventory.m_ItemList)
+            {
+                m_Items.Add(new ItemViewModel(item));
+            }
+            OnPropertyChanged("Items");
+            m_CurrentSelectedItem = m_Items[SelectedInventorySlot];
+           
         }
 
         public bool Switching
@@ -82,7 +98,7 @@ namespace Rust_Inventory.Code_behind
         public void UpdateCurrentSelection(int index)
         {
             SelectedInventorySlot = index;
-            m_CurrentSelectedItem = m_Inventory.ItemsVM[SelectedInventorySlot];
+            m_CurrentSelectedItem = m_Items[SelectedInventorySlot];
             OnPropertyChanged("CurrentSelectedItem");
 
         }
@@ -95,6 +111,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(0);
@@ -107,6 +124,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(1);
@@ -119,6 +137,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(2);
@@ -131,6 +150,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(3);
@@ -143,6 +163,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(4);
@@ -155,6 +176,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(5);
@@ -167,6 +189,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(6);
@@ -179,6 +202,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(7);
@@ -191,6 +215,7 @@ namespace Rust_Inventory.Code_behind
                 {
                     OnPropertyChanged("Items");
                     Switching = false;
+                    RefreshItemVMs();
                 }
             }
             UpdateCurrentSelection(8);
