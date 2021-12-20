@@ -22,54 +22,54 @@ namespace Rust_Inventory
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ItemViewModel m_ViewModel;
+        private InventoryViewModel m_InventoryViewModel;
 
         public MainWindow()
         {
             InitializeComponent();
-            m_ViewModel = new ItemViewModel();
-            this.DataContext = m_ViewModel;
+            m_InventoryViewModel = new InventoryViewModel();
+            this.DataContext = m_InventoryViewModel;
             this.Show();
         }
         private void OnClick0(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick0();
+            m_InventoryViewModel.OnClick0();
         }
         private void OnClick1(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick1();
+            m_InventoryViewModel.OnClick1();
         }
         private void OnClick2(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick2();
+            m_InventoryViewModel.OnClick2();
         }
         private void OnClick3(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick3();
+            m_InventoryViewModel.OnClick3();
         }
         private void OnClick4(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick4();
+            m_InventoryViewModel.OnClick4();
         }
         private void OnClick5(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick5();
+            m_InventoryViewModel.OnClick5();
         }
         private void OnClick6(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick6();
+            m_InventoryViewModel.OnClick6();
         }
         private void OnClick7(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick7();
+            m_InventoryViewModel.OnClick7();
         }
         private void OnClick8(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnClick8();
+            m_InventoryViewModel.OnClick8();
         }
         private void OnSwitchStart(object sender, RoutedEventArgs e)
         {
-            m_ViewModel.OnSwitchStart();
+            m_InventoryViewModel.OnSwitchStart();
         }
     }
 }

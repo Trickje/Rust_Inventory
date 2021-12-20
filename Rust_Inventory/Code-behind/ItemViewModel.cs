@@ -10,168 +10,119 @@ namespace Rust_Inventory.Code_behind
 {
     class ItemViewModel : INotifyPropertyChanged
     {
-        private IList<ItemBase> m_ItemList;
-        public int SelectedInventorySlot;
-        private bool m_Switching;
-        public bool Switching
+        private Item m_Target;
+        private int m_ItemID;
+        private string m_ItemName;
+        private int m_ItemCount;
+        private float m_ItemDamage;
+        private string m_ItemSprite;
+        private float m_ItemRangeOfEffect;
+        private float m_ItemDurability;
+        public int ItemID
         {
             get
             {
-                return m_Switching;
+                return m_ItemID;
             }
             set
             {
-                if(value == false)
-                {
-                    m_SwitchString = "Not swapping";
-                    OnPropertyChanged("SwitchString");
-                }
-                else
-                {
-                    m_SwitchString = "Swapping items";
-                    OnPropertyChanged("SwitchString");
-                }
-                m_Switching = value;
+                m_ItemID = value;
+                m_Target.m_ItemID = value;
+                OnPropertyChanged("ItemID");
             }
         }
-        private string m_SwitchString;
-        public string SwitchString
+        public string ItemName
         {
             get
             {
-                return m_SwitchString;
+                return m_ItemName;
             }
             set
             {
-                m_SwitchString = value;
+                m_ItemName = value;
+                m_Target.m_ItemName = value;
+                OnPropertyChanged("ItemName");
             }
         }
-        
-        private ItemBase m_CurrentSelectedItem;
-        public ItemBase CurrentSelectedItem {
+        public int ItemCount
+        {
             get
             {
-                return m_CurrentSelectedItem;
+                return m_ItemCount;
             }
             set
             {
-                m_CurrentSelectedItem = value;
+                m_ItemCount = value;
+                m_Target.m_ItemCount = value;
+                OnPropertyChanged("ItemCount");
             }
         }
-        public void UpdateCurrentSelection(int index)
-        {
-            SelectedInventorySlot = index;
-            m_CurrentSelectedItem = Items[SelectedInventorySlot];
-            OnPropertyChanged("CurrentSelectedItem");
-            
-        }
 
-        public void SwapItems(int index1, int index2)
+        public float ItemDamage
         {
-            ItemBase temp = Items[index1];
-            Items[index1] = Items[index2];
-            Items[index2] = temp;
-            Switching = false;
-            SwitchString = "Not Swapping";
-            OnPropertyChanged("Items");
-        }
-
-        public ItemViewModel()
-        {
-            SelectedInventorySlot = 0;
-            Switching = false;
-            SwitchString = "Not Swapping";
-            m_ItemList = new List<ItemBase>
+            get
             {
-                new ItemBase{
-                    ItemID= 1,
-                    ItemName ="AK 47",
-                    ItemCount=1,
-                    ItemDamage=120.0f,
-                    ItemSprite="AK_StockImage.jpg",
-                    ItemRangeOfEffect=50.0f,
-                    ItemDurability=100.0f
-                },
-                new ItemBase{
-                    ItemID= 2,
-                    ItemName ="Pistol (Silenced)",
-                    ItemCount=1,
-                    ItemDamage=80.0f,
-                    ItemSprite="Pistol_Silenced.jpg",
-                    ItemRangeOfEffect=30.0f,
-                    ItemDurability=100.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                },
-                new ItemBase{
-                    ItemID= 0,
-                    ItemName ="Empty",
-                    ItemCount=0,
-                    ItemDamage=0.0f,
-                    ItemSprite="Empty.png",
-                    ItemRangeOfEffect=0.0f,
-                    ItemDurability=0.0f
-                }
-            };
-
-            m_CurrentSelectedItem = Items[SelectedInventorySlot];
+                return m_ItemDamage;
+            }
+            set
+            {
+                m_ItemDamage = value;
+                m_Target.m_ItemDamage = value;
+                OnPropertyChanged("ItemDamage");
+            }
         }
-        public IList<ItemBase> Items
+        public string ItemSprite
         {
-            get { return m_ItemList; }
-            set { m_ItemList = value; }
+            get
+            {
+                return m_ItemSprite;
+            }
+            set
+            {
+                m_ItemSprite = value;
+                m_Target.m_ItemSprite = value;
+                OnPropertyChanged("ItemSprite");
+            }
+        }
+
+        public float ItemRangeOfEffect
+        {
+            get
+            {
+                return m_ItemRangeOfEffect;
+            }
+            set
+            {
+                m_ItemRangeOfEffect = value;
+                m_Target.m_ItemRangeOfEffect = value;
+                OnPropertyChanged("ItemRangeOfEffect");
+            }
+        }
+        public float ItemDurability
+        {
+            get
+            {
+                return m_ItemDurability;
+            }
+            set
+            {
+                m_ItemDurability = value;
+                m_Target.m_ItemDurability = value;
+                OnPropertyChanged("ItemDurability");
+            }
+        }
+
+
+        public ItemViewModel(Item a_Target)
+        {
+            m_Target = a_Target;
+            ItemID = a_Target.m_ItemID;
+            ItemName = a_Target.m_ItemName;
+            ItemCount = a_Target.m_ItemCount;
+            ItemDamage = a_Target.m_ItemDamage;
+            ItemSprite = a_Target.m_ItemSprite;
+            ItemRangeOfEffect = a_Target.m_ItemRangeOfEffect;
+            ItemDurability = a_Target.m_ItemDurability;
         }
         #region INotifyPropertyChanged Members  
 
@@ -184,81 +135,5 @@ namespace Rust_Inventory.Code_behind
             }
         }
         #endregion
-        public void OnClick0()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 0);
-            }
-            UpdateCurrentSelection(0);
-        }
-        public void OnClick1()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 1);
-            }
-            UpdateCurrentSelection(1);
-        }
-        public void OnClick2()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 2);
-            }
-            UpdateCurrentSelection(2);
-        }
-        public void OnClick3()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 3);
-            }
-            UpdateCurrentSelection(3);
-        }
-        public void OnClick4()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 4);
-            }
-            UpdateCurrentSelection(4);
-        }
-        public void OnClick5()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 5);
-            }
-            UpdateCurrentSelection(5);
-        }
-        public void OnClick6()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 6);
-            }
-            UpdateCurrentSelection(6);
-        }
-        public void OnClick7()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 7);
-            }
-            UpdateCurrentSelection(7);
-        }
-        public void OnClick8()
-        {
-            if (Switching)
-            {
-                SwapItems(SelectedInventorySlot, 8);
-            }
-            UpdateCurrentSelection(8);
-        }
-        public void OnSwitchStart()
-        {
-            Switching = !Switching;
-        }
     }
 }

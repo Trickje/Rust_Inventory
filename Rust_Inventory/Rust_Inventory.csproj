@@ -63,7 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Code-behind\ItemBase.cs" />
+    <Compile Include="Code-behind\Inventory.cs" />
+    <Compile Include="Code-behind\InventoryViewModel.cs" />
+    <Compile Include="Code-behind\Item.cs" />
     <Compile Include="Code-behind\ItemViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
